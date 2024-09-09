@@ -1,0 +1,593 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  /* font-family: "aquire"; */
+}
+
+body {
+  background-color: #1c1c27;
+  /* overflow: hidden; */
+  /* cursor: none; */
+
+}
+
+@font-face {
+  font-family: "Aquire";
+  src: url(./aquire-font/AquireBold-8Ma60.otf);
+  font-weight: bold;
+}
+
+.navbar-nav {
+  flex: 1;
+  justify-content: center;
+}
+.crsr {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  position: fixed;
+  border: 1px solid #ffffffb0;
+  z-index:3;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+}
+
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgb(17, 17, 17);
+  padding: 20vh 12vw;
+  overflow: hidden;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.4;
+  object-fit: cover;
+  filter: hue-rotate(30deg) brightness(90%);
+}
+
+.lines {
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.6vw;
+  /* opacity: 0; */
+}
+
+.lines h2 {
+  font-size: 3.5vw;
+  font-weight: 400;
+  font-family: "Aquire";
+}
+.lines span {
+  color: #E92163;
+  font-size: 4.3vw;
+}
+
+.lines h5 {
+  margin-top: 10px;
+  font-size: 1.8vw;
+  font-weight: 200;
+  letter-spacing: 1.4px;
+  font-family: "aquire";
+  /* opacity: 0; */
+}
+
+#main {
+  position: relative;
+  /* background-color: #030303; */
+}
+
+#page1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #1c1c27;
+  /* overflow-x: hidden; */
+
+
+}
+
+#page1 #navbar {
+  padding: 2vw 11vw;
+}
+
+.navbar {
+  background-color: #1c1c27 !important;
+}
+
+.navbar .container #icon a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Aquire";
+}
+
+.nav-part2 ul {
+  display: flex;
+  justify-content: center; /* Center the ul horizontally */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-part2 ul li a {
+  padding: 0;
+  color: #fff;
+}
+
+.nav-part2 ul li {
+  cursor: pointer;
+  font-size: 19px;
+  font-family: "aquire";
+  position: relative; /* Ensure position relative for ::after to work correctly */
+  margin: 0 15px; /* Add some spacing between the links */
+}
+
+.nav-part2 ul li:hover {
+  display: inline-block;
+}
+
+/* Create a hidden underline initially */
+.nav-part2 ul li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #E92163;
+  bottom: -2px; /* Adjust this value if needed */
+  left: 0;
+  transition: width 0.3s ease-in-out; /* Transition for the underline */
+}
+
+/* On hover, expand the underline from left to right */
+.nav-part2 ul li:hover::after {
+  width: 100%;
+}
+
+/* Remove the default focus outline */
+.nav-part2 ul li a:focus {
+  outline: none;
+}
+.btn {
+  display: inline-block;
+/* padding-right: 1vw; */
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  border: 3px solid #E92163;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: inherit;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #E92163;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  transform: translateX(0);
+}
+
+.Intro-heading {
+  padding: 60px 50px;
+}
+.Intro-heading span{
+  font-family: sans-serif;
+}
+.Intro-heading h2 {
+  font-size: 3.3vw;
+  font-weight: 800;
+  line-height: 62px;
+  font-family: 'aquire';
+}
+
+.Intro-heading p {
+  font-size: 34px;
+  font-weight: 700;
+  display: inline-block; /* Ensure text animation works correctly */
+}
+.Intro-heading .intro-para {
+  font-family: sans-serif;
+  font-weight: 500;
+  color: #97989e;
+  font-size: 23px;
+}
+
+.right-banner svg {
+  width: 90%;
+  object-fit: cover;
+  position: relative;
+}
+
+.right-banner img {
+  position: absolute;
+  width: 25%;
+}
+
+.circle1 {
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  background-color: #378cdc;
+}
+
+.circle1:hover {
+  scale: 1.3;
+  background-color: #378cdc;
+  z-index: 5;
+}
+.circle1 i {
+  padding: 15px;
+  font-size: 30px;
+}
+
+.circle2 {
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  background-color: #25bf53;
+}
+
+.circle2:hover {
+  scale: 1.3;
+  background-color: #25bf53;
+  z-index: 5;
+}
+.circle2 i {
+  padding: 16px;
+  font-size: 28px;
+}
+
+.circle3 {
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  background-color: #1d539e;
+}
+
+.circle3:hover {
+  scale: 1.3;
+  background-color: #1d539e;
+  z-index: 5;
+}
+.circle3 i {
+  padding: 16px;
+  font-size: 32px;
+
+}
+
+.circle4 {
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  background-color: #000000;
+}
+
+.circle4:hover {
+  scale: 1.3;
+  background-color: #000000;
+  z-index: 5;
+}
+.circle4 i {
+  padding: 13px;
+  font-size: 35px;
+}
+
+
+
+/* skill section  */
+
+.Skill-container h2{
+  font-size: 3.3vw;
+  font-family: 'aquire';
+}
+
+
+.Skill_heading {
+  position: relative; /* Ensures the pseudo-element is positioned relative to .Skill_heading */
+  overflow: hidden; /* Ensures the pseudo-element doesn't overflow its container */
+  padding: 0 5.8vw;
+}
+
+.Skill_heading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(./assets/skillBg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1; /* Sets the opacity of the background image */
+  z-index: -1; /* Ensures the background image is behind any content inside .Skill_heading */
+}
+
+.skill-logo img{
+  width: 99%;
+}
+
+.container {
+  color: white;
+  position: relative;
+  font-family: sans-serif;
+}
+
+
+ .box {
+  width: 11.875em;
+  height: 13.875em;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0.7rem;
+  transition: all ease 0.3s;
+}
+
+ .box-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1rem;
+}
+
+ .box .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+ .box div strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+ .box div p {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+ .box div span {
+  font-size: 1vw;
+  font-weight: 300;
+}
+
+ .box div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: 0.2rem;
+}
+
+ .box:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+
+
+/* experience section  */
+
+.experienceTitle h2{
+  font-size: 3.2vw;
+  font-family: 'aquire';
+}
+
+
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 40px 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px; /* Define a width for the line */
+  height: 100%;
+  background-color: #ffffff; /* Set a background color for the line */
+  z-index: -1; /* Ensure it stays behind other content */
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: url('./assets/experiencebgimage2.png') no-repeat center center;
+  background-size: contain;
+  opacity: .3; /* Optional: to make it less distracting */
+  z-index: -2; /* Ensure it stays behind the timeline line */
+}
+
+.timeline ul {
+  padding: 0;
+  margin: 0;
+}
+.timeline ul li {
+  list-style: none;
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+.timeline ul li:nth-child(odd) {
+  float: left;
+  text-align: right;
+  clear: both;
+}
+.timeline ul li:nth-child(even) {
+  float: right;
+  text-align: left;
+  clear: both;
+}
+.content {
+  padding-bottom: 20px;
+  font-family: 'aquire';
+}
+.timeline ul li:nth-child(odd):before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 24px;
+  right: -6px;
+  background: rgba(233, 33, 99, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.2);
+}
+.timeline ul li:nth-child(even):before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 24px;
+  left: -4px;
+  background: rgba(233, 33, 99, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.2);
+}
+.timeline ul li h3 {
+  padding: 0;
+  margin: 0;
+  color: rgba(233, 33, 99, 1);
+  font-weight: 600;
+
+}
+.timeline ul li p {
+  margin: 10px 0 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #97989e;;
+}
+.timeline ul li span{
+font-size: 18px;
+font-weight: 600;
+  font-family: sans-serif;
+  color: #97989e;
+}
+.timeline ul li .time h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+.timeline ul li:nth-child(odd) .time {
+  position: absolute;
+  top: 12px;
+  right: -165px;
+  margin: 0;
+  padding: 8px 13px;
+  background: rgba(233, 33, 99, 1);
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.3);
+}
+.timeline ul li:nth-child(even) .time {
+  position: absolute;
+  top: 12px;
+  left: -165px;
+  margin: 0;
+  padding: 8px 10px;
+  background: rgba(233, 33, 99, 1);
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.3);
+}
+@media (max-width: 1000px) {
+  .timeline {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .timeline {
+    width: 100%;
+    padding-bottom: 0;
+  }
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+  .timeline:before {
+    left: 20px;
+    height: 100%;
+  }
+  .timeline ul li:nth-child(odd),
+  .timeline ul li:nth-child(even) {
+    width: 100%;
+    text-align: left;
+    padding-left: 50px;
+    padding-bottom: 50px;
+  }
+  .timeline ul li:nth-child(odd):before,
+  .timeline ul li:nth-child(even):before {
+    top: -18px;
+    left: 16px;
+  }
+  .timeline ul li:nth-child(odd) .time,
+  .timeline ul li:nth-child(even) .time {
+    top: -30px;
+    left: 50px;
+    right: inherit;
+  }
+}
+
+.Project-section-heading h1{
+  font-size: 3.3vw;
+  font-family: 'aquire';
+}
+
+.Projects{
+  width: 70%;
+  height: 90vh;
+  color: #fff;
+  position: relative;
+}
+
+.Project-section-whole{
+  overflow-y: hidden;
+  height: 100vh;
+  position: relative;
+
+}
+
+
+#project1 img{
+ 
+  box-shadow: 6px 7px 4px 4px #5a454c80;  
+}
